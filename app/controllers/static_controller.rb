@@ -1,22 +1,21 @@
 class StaticController < ApplicationController
+
+  def home_page
+    @gossips = Gossip.all
+  end
 	
   def welcome 
-  	@user = User.find_by(first_name: params['first_name'])
+  	@first_name = params[:first_name]
   end
 
-  def show
-  	@gossip = Gossip.all
+  def gossip
+  	#@gossip = Gossip.find(params[:id])
   end
 
   def team
   end
 
   def contact
-  end
-
-  def gossip
-  	@gossips = Gossip.all
-  	puts @gossips
   end
 
 end
